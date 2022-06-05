@@ -1,8 +1,20 @@
+use std::io;
+
 fn main() {
-    println!("Hello, world!");
+    print!("Hello, your options are these:
+        1. Celsius to Fahrenneits 
+        2. Fahrenneits to Celsium");
 }
 
+//(30°C x 1.8) + 32 = 86°       fn
+//(50°F - 32) x .5556 = 10°C
 
-fn celsius_to_farhenneit(temp_in_celsius: i32) -> i32 {
+fn celsius_to_farhenneit(temp_in_celsius: f32) -> f32 {
+    (temp_in_celsius * 1.8 ) + 32 as f32
+}
 
+fn fahrenneits_to_celsius(temp_in_fahren: f32) -> f32 {
+    let subtractFactor:f32 = 32.0;
+    let multiplication_factor = (5/9) as f32;
+    (temp_in_fahren -  subtractFactor) * multiplication_factor
 }
